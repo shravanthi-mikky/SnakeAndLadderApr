@@ -6,6 +6,7 @@ int isWin = 100;
 while (playerposition <= isWin)
 {
     int rollDie = random.Next(1, 7);
+    Console.WriteLine(rollDie);
     int options = random.Next(0, 3);
     switch (options)
     {
@@ -28,7 +29,10 @@ while (playerposition <= isWin)
         default:
             break;
     }
-    
+    if (playerposition > isWin)
+    {
+        playerposition -= rollDie;
+    }
     Console.WriteLine(playerposition);
 }
 Console.WriteLine(playerposition);
